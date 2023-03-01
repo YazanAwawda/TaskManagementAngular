@@ -1,0 +1,47 @@
+<form  class="container" style="margin: 150px" #taskForm [formGroup]="TaskFormGroup"
+       (ngSubmit)="onSubmit()">
+  <h3> Code project number :
+    {{projectID}}
+  </h3>
+
+  <div class=row>
+    <div class="mb-3 col">
+      <label for="name" class="form-label">Task Name:</label>
+      <input formControlName="name" type="text" class="form-control" id="name">
+    </div>
+  </div>
+  <div class=row>
+    <div class="mb-3 col">
+      <label for="description" class="form-label">Task Description:</label>
+      <input formControlName="description" type="text" class="form-control" id="description">
+    </div>
+  </div>
+  <mat-form-field>
+    <mat-label>
+      Task Type
+    </mat-label>
+    <mat-select formControlName="taskType">
+      <mat-option *ngFor="let e of enumValue(taskType) " [value]="e">{{e | TaskType  }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br><br><br>
+  <mat-form-field>
+    <mat-label>
+      Task Priority
+    </mat-label>
+    <mat-select formControlName="taskPriority">
+      <mat-option *ngFor="let e of enumValue(taskPriority) " [value]="e">{{e | TaskPriority  }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class=row>
+    <div class="mb-3 col">
+      <label for="estimatedDueDate" class="form-label">Estimated Due Date:</label>
+      <input formControlName="estimatedDueDate" type="date" class="form-control" id="estimatedDueDate">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-secondary">Create Task</button>
+
+</form>
+
+
+

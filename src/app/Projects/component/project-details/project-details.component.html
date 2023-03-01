@@ -1,0 +1,35 @@
+<main class="container-md" style="margin: 450px">
+  <div>
+    <button type="button" class="btn btn-outline-warning" (click)="onAddTaskForProject()">New Task</button>
+    <dl class="row">
+      <dt class="col-sm-3">Id</dt>
+      <dd class="col-sm-9">{{projects_.id}}</dd>
+      <dt class="col-sm-3">Name</dt>
+      <dd class="col-sm-9">{{projects_.name}}</dd>
+
+      <dt class="col-sm-3">Description</dt>
+      <dd class="col-sm-9">
+        <p>{{projects_.description}}</p>
+      </dd>
+
+      <dt class="col-sm-3">Start Date</dt>
+      <dd class="col-sm-9">{{projects_.startDate | date }}</dd>
+
+      <dt class="col-sm-3 text-truncate">End Date</dt>
+      <dd class="col-sm-9">{{projects_.endDate  | date}}</dd>
+
+      <dt class="col-sm-3 text-truncate">Current Status</dt>
+      <dd class="col-sm-9">{{projects_.currentStatus}}</dd>
+
+      <dd class="col-sm-9">
+        <dl class="row">
+          <dt class="col-sm-4"> Team </dt>
+          <dd class="col-sm-8"> </dd>
+          <dt class="col-sm-4"> Tasks </dt>
+          <dd class="col-sm-8"> </dd>
+        </dl>
+      </dd>
+    </dl>
+
+  </div>
+</main>

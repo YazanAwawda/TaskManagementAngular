@@ -1,0 +1,68 @@
+
+  <main style="margin-left: 295px ;margin-top: 90px;">
+    <div class="container">
+      <div class="grid" >
+        <div  class="row row-cols-3" >
+          <div *ngFor="let project of projects"  class="col-md-4" style="
+          width: 350px;">
+
+            <div   class="card" >
+              <div class="card-header">
+                <div class="p-2 flex-fill bd-highlight">
+                  <div class="p-2">
+                    <h2 style="font-size: medium;color: black;">
+                      {{project.name}}
+                    </h2>
+                      <mat-icon style="color:blue; cursor: pointer;" class="dropdown-toggle" id="btnGroupDrop1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                        more_horiz
+                      </mat-icon>
+                      <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item">
+                          <div  [routerLink]="['/project-details', project.id]"  class="btn btn-outline-info">
+                            <mat-icon style="font-size: 15px;
+    height: 15px ;
+    width: 15px;">details</mat-icon>
+                            Project Details
+                          </div>
+                        </a></li>
+                        <li cla><a  class="dropdown-item">
+                          <div  [routerLink]="['/edit-project', project.id]" class="btn btn-outline-primary" style="width:150px;">
+                            <mat-icon style="font-size: 15px;height: 15px ;width: 15px;">edit</mat-icon>
+                            Edit Project
+                          </div>
+                        </a></li>
+                        <li><a class="dropdown-item">
+                          <div class="btn btn-outline-danger" (click)="deletionConfirmation(project.id)" >
+                            <mat-icon style="font-size: 15px;
+    height: 15px ;
+    width: 15px;">remove_circle</mat-icon>
+                            Delete Project
+                          </div>
+                        </a></li>
+                      </ul>
+                    </div>
+                    <div>
+
+                  </div>
+<!--                  <div class="p-2" style="margin-left: 50px; "></div>-->
+<!--                  <div class="p-2" style="margin-right: 50px;"></div>-->
+
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text"> {{project.startDate | date }}</p>
+
+              </div>
+              <div class="card-footer text-muted">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
