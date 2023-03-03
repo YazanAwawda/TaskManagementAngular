@@ -62,7 +62,6 @@ get estimatedDueDate() {return this.TaskFormGroup?.get('estimatedDueDate');}
 
 get TaskPriority_() {return this.TaskFormGroup?.get('taskPriority') as FormControl<TaskPriority>;}
 
-get projectId() {return this.TaskFormGroup?.get('projectId') ;}
    private addTask() : void{
 
     const creatTask_ : CreateTasks = {

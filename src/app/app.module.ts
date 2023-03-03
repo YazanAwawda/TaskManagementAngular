@@ -37,6 +37,8 @@ import { TaskDetailsComponent } from './Tasks/component/task-details/task-detail
 
 import  {PipeModule} from "./PipeModule";
 import {TaskServices} from "./Services/TaskServices/task.service";
+import { DialogComponent } from './DialogMatComponent/dialog/dialog.component';
+import { FilterComponent } from './FilterSearch/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import {TaskServices} from "./Services/TaskServices/task.service";
     TaskListComponent,
     EditTaskComponent,
     TaskDetailsComponent,
+    DialogComponent,
+    FilterComponent,
 
 
   ],

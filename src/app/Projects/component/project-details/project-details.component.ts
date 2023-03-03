@@ -3,6 +3,7 @@ import {GetProject} from "../../../Models/Project/project.model";
 import {ProjectService} from "../../../Services/ProjectServices/project.service";
 import {TaskServices} from "../../../Services/TaskServices/task.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {GetTask} from "../../../Models/Tasks/task.model";
 
 @Component({
   selector: 'app-project-details',
@@ -17,7 +18,6 @@ export class ProjectDetailsComponent implements  OnInit {
   // @Output() projectIDChanged = new EventEmitter<number>(); // declare the event emitter here
 
   constructor(private  projectService : ProjectService ,
-              private  taskService :TaskServices ,
               private route : ActivatedRoute ,
               private  router : Router) {
   }
@@ -28,6 +28,7 @@ export class ProjectDetailsComponent implements  OnInit {
         this.projects_ = project_ ;
          console.log(project_);
         // this.projectIDChanged.emit(this.projectID); // emit the event when projectID is updated
+
       });
     });
   }
@@ -37,4 +38,8 @@ export class ProjectDetailsComponent implements  OnInit {
   onAddTaskForProject() {
     this.router?.navigate([`/create-task/${this.projectID}`])
 }
+   onViewTasksProject(){
+    this.router?.navigate([`/task-listOfProject/${this.projectID}`])
+}
+
 }

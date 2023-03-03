@@ -1,18 +1,18 @@
 
 import * as Enum_ from "../../Enum/enum.model" ;
 export interface GetTask {
-  id: number,
-  name: string,
-  description: string,
-  estimatedDueDate: Date,
-  actualDueDate: Date,
-  startDate: Date,
-  endDate: Date,
-  currentStatus:Enum_.TaskStatus ,
-  projectId: number,
-  taskType: Enum_.TaskType,
-  priority: Enum_.TaskPriority,
-  durationProgress: 0
+  id ?: number,
+  name ?: string,
+  description ?: string,
+  estimatedDueDate  ?: Date,
+  actualDueDate ?: Date,
+  startDate ?: Date,
+  endDate ?:  Date,
+  currentStatus ?: Enum_.TaskStatus ,
+  projectId ?: number,
+  taskType ?: Enum_.TaskType,
+  priority ?: Enum_.TaskPriority,
+  durationProgress ?: 0
 }
 export interface CreateTasks {
   name ?: string,

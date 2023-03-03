@@ -9,7 +9,7 @@ import { CreateProject, DeleteProject, downloadFileProject, EditProject, GetProj
 export class ProjectService {
 
   constructor(private http: HttpClient) { }
-  projectUrl: string = "https://localhost:7011/api/Project";
+   private projectUrl: string = "https://localhost:7011/api/Project";
   file_s !: uploadFileProject ;
 
   getProjects(): Observable<GetProjects[]> {

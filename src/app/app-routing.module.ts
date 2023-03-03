@@ -13,6 +13,10 @@ import {EditProjectComponent} from "./Projects/component/edit-project/edit-proje
 import {DeleteProjectComponent} from "./Projects/component/delete-project/delete-project.component";
 import {ProjectDetailsComponent} from "./Projects/component/project-details/project-details.component";
 import {AddTaskComponent} from "./Tasks/component/add-task/add-task.component";
+import {TaskListComponent} from "./Tasks/component/task-list/task-list.component";
+import {EditTaskComponent} from "./Tasks/component/edit-task/edit-task.component";
+import {TaskDetailsComponent} from "./Tasks/component/task-details/task-details.component";
+import {DeleteTaskComponent} from "./Tasks/component/delete-task/delete-task.component";
 
 const routes: Routes = [
   // { path: 'pages-contact', component: PagesContactComponent },
@@ -26,7 +30,11 @@ const routes: Routes = [
   {path : 'edit-project/:id' , component:EditProjectComponent},
   {path : 'delete-project', component:DeleteProjectComponent},
   {path : 'project-details/:id',component:ProjectDetailsComponent}
-  ,{path:'create-task/:id' , component : AddTaskComponent}
+  ,{path:'create-task/:id' , component : AddTaskComponent},
+   {path: 'task-listOfProject/:id', component:TaskListComponent },
+   {path : 'edit-task/:id' , component : EditTaskComponent },
+   {path : 'task-details/:id' , component :TaskDetailsComponent},
+   {path : 'delete-task' , component : DeleteTaskComponent},
 
   ]
 ;
