@@ -1,11 +1,9 @@
-<main class="container-md" style="margin: 450px">
-  <div>
-    <button type="button" class="btn btn-outline-warning" (click)="onAddTaskForProject()">New Task</button>
+  <div  class="container-lg" style="margin-top:100px;
+  margin-left: 450px; width: 550px; position: fixed;">
+    <button style="margin-bottom:50px;" type="button" class="btn btn-outline-warning" (click)="onAddTaskForProject()">New Task</button>
     <dl class="row">
-      <dt class="col-sm-3">Id</dt>
-      <dd class="col-sm-9">{{projects_.id}}</dd>
       <dt class="col-sm-3">Name</dt>
-      <dd class="col-sm-9">{{projects_.name}}</dd>
+      <dd  class="col-sm-9">{{projects_.name}}</dd>
 
       <dt class="col-sm-3">Description</dt>
       <dd class="col-sm-9">
@@ -25,13 +23,12 @@
         <dl class="row">
           <dt class="col-sm-4"> Team </dt>
           <dd class="col-sm-8"> </dd>
+          <br><br><br>
           <dt class="col-sm-4">Tasks </dt>
           <dd class="col-sm-8">
-          <button (click)="onViewTasksProject()" class="btn-outline-danger">View Tasks of Project </button>
+          <button  type="button" class="btn btn-outline-danger" (click)="onViewTasksProject()">View Tasks of Project </button>
           </dd>
         </dl>
       </dd>
     </dl>
-
   </div>
-</main>
