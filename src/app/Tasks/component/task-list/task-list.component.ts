@@ -26,10 +26,13 @@ export class TaskListComponent implements  OnInit{
     this.route.params.subscribe(x => {
      this.projectId = Number(x["id"])
     });
-
+const tsk : GetTask = {
+  projectId : this.projectId
+}
 this.tasksServices.getTaskByProjectID(this.projectId).subscribe((tasks:GetTask[]   )=> {
   this.tasks = tasks ;
-  console.log(tasks)
+
+  console.log(tsk)
 });
 
 

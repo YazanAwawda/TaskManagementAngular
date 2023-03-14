@@ -27,17 +27,17 @@ export interface CreateTasks {
   estimatedDueDate ?: Date
 
 }
-export interface editTask {
+export interface EditTask {
   id: number,
   name: string,
   description: string,
   endDate: Date,
-  taskType: 0
+  taskType: Enum_.TaskType;
 }
-export interface deleteTask {
+export interface DeleteTask {
   id: number
 }
-export interface getTaskById {
+export interface GetTaskById {
   id: number
 }
 export interface TaskComment {
@@ -45,7 +45,7 @@ export interface TaskComment {
   parentCommentId: 0,
   taskId: 0
 }
-export interface createSubTask {
+export interface CreateSubTask {
   parentTaskId: number,
   name: string,
   description: string,
@@ -54,7 +54,7 @@ export interface createSubTask {
   priority: 0,
   teamMemberEmployeeId: string
 }
-export interface editAssignTeamMember {
+export interface EditAssignTeamMember {
   taskId: number,
   employeeID: string
 }
@@ -62,7 +62,7 @@ export interface ReAssignTeamMember {
   taskId: number,
   employeeID: string
 }
-export interface uploadTasksFile {
+export interface UploadTasksFile {
   OwnerId: number,
   File: string
 }

@@ -1,6 +1,6 @@
 /* Get values of enum */
 
-export function enumValues (e : object) : any [] {
+export function enumValues (e : object ) : any [] {
   const  mass = Object.values(e) ;
   return  mass.splice(mass.length / 2 , mass.length);
 

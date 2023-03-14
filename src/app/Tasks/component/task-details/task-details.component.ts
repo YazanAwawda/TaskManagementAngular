@@ -12,13 +12,18 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class TaskDetailsComponent implements  OnInit{
   tasksInfo !: GetTask;
-
+  taskId !: number ;
   constructor(private  taskServices : TaskServices ,
-              private  route : ActivatedRoute ,
-              private projectServices : ProjectService) {
+              private  route : ActivatedRoute ) {
   }
   ngOnInit() {
+    this.route.params.subscribe(x =>
+     this.taskId =  Number(x['id']))
 
+    this.taskServices.getTaskByID(this.taskId).subscribe(task => {
+      this.tasksInfo = task ;
+      console.log(this.tasksInfo);
+    })
   }
 
 

@@ -1,11 +1,11 @@
-
+import  * as enum_ from '../../Enum/enum.model'
 export interface GetProject {
   id ?: number;
   name ?: string;
   description ?: string;
   startDate ?: Date;
   endDate ?: Date;
-  currentStatus?: 0
+  currentStatus?: enum_.ProjectStatus;
   team?: null;
   tasks?: [],
   trackerValue?: null,
@@ -15,7 +15,7 @@ export interface GetProjects {
   id : number ;
   name?: string;
   startDate?: Date;
-  currentStatus?: 0;
+  currentStatus?: enum_.ProjectStatus;
   teamId?: number;
 }
 

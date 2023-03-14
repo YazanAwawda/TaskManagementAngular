@@ -51,7 +51,7 @@ export class CreateProjectComponent implements OnInit {
       return;
     }
 
-    this.projectCreationController();
+    this?.projectCreationController();
   }
 
   // Controller for handling project creation
@@ -65,8 +65,8 @@ export class CreateProjectComponent implements OnInit {
         await this.addNewProject();
 
       } catch (error: any) {
-        console.error(error);
-        this.errMsg = error;
+        // console.error(error);
+        // this.errMsg = error;
         return;
       }
     // } else {

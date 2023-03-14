@@ -17,14 +17,15 @@ import {TaskListComponent} from "./Tasks/component/task-list/task-list.component
 import {EditTaskComponent} from "./Tasks/component/edit-task/edit-task.component";
 import {TaskDetailsComponent} from "./Tasks/component/task-details/task-details.component";
 import {DeleteTaskComponent} from "./Tasks/component/delete-task/delete-task.component";
+import {AllTasksComponent} from "./Tasks/component/all-tasks/all-tasks.component";
 
 const routes: Routes = [
   // { path: 'pages-contact', component: PagesContactComponent },
   // { path: 'pages-error404', component: PagesError404Component },
   // { path: 'pages-faq', component: PagesFaqComponent },
-  // { path: 'pages-login', component: PagesLoginComponent },
-  // { path: 'pages-register', component: PagesRegisterComponent },
-  // { path: 'user-profile', component: UsersProfileComponent },
+  { path: 'pages-login', component: PagesLoginComponent },
+  { path: 'pages-register', component: PagesRegisterComponent },
+  { path: 'user-profile', component: UsersProfileComponent },
   {path: 'create-project' , component:CreateProjectComponent},
   {path : 'list-project' , component:ListProjectComponent} ,
   {path : 'edit-project/:id' , component:EditProjectComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path : 'project-details/:id',component:ProjectDetailsComponent}
   ,{path:'create-task/:id' , component : AddTaskComponent},
    {path: 'task-listOfProject/:id', component:TaskListComponent },
+   {path : 'All-Tasks' , component:AllTasksComponent},
    {path : 'edit-task/:id' , component : EditTaskComponent },
    {path : 'task-details/:id' , component :TaskDetailsComponent},
    {path : 'delete-task' , component : DeleteTaskComponent},

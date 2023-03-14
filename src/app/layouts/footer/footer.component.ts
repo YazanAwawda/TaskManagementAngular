@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -6,18 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+  // ProjectStatusToDisplay : enum_.ProjectStatus[];
+  // PageIndex : number ;
+  //
+  // PageSize : number ;
+  //
+  // Sort : string ;
+  //
+  // Search : string ;
 
+  @Input() pageSize_ !: number ;
+  @Input() totalCount_ !: number ;
+  @Output() pageChanged_ = new EventEmitter<number>() ;
   constructor() { }
 
   ngOnInit(): void {
   }
-  scrollTop()
-  {
-    window.scroll({ 
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-});
 
+  onPageChanged(event : any){
+    this.pageChanged_.emit(event.page)
   }
+
 }

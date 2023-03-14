@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import {ProjectService} from "../../../Services/ProjectServices/project.service";
-import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-delete-project',
@@ -16,7 +15,7 @@ export class DeleteProjectComponent {
 
 
   // constructor holds the project service
-  constructor(private project_Services : ProjectService , public dialog: MatDialog) {
+  constructor(private project_Services : ProjectService ) {
   }
   deleteProjectCustom() {
     this.project_Services.deleteProject(this.deleteID).subscribe();

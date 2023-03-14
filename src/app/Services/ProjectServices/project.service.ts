@@ -1,7 +1,9 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {catchError, concatMap, forkJoin, map, Observable, tap, throwError} from 'rxjs';
 import { CreateProject, DeleteProject, downloadFileProject, EditProject, GetProject, GetProjects, ProjectAddTeam, uploadFileProject } from 'src/app/Models/Project/project.model';
+import {ProjectParams} from "../../Models/Pagination/ProjectParams";
+import {IProjectPagination} from "../../Models/Pagination/ProjectPagination";
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,28 @@ export class ProjectService {
    private projectUrl: string = "https://localhost:7011/api/Project";
   file_s !: uploadFileProject ;
 
+  private  httpOptions = {
+    header: new HttpHeaders(
+      {
+        'Content-Type' : 'application/json'
+      }
+    )
+  };
+   private  httpParams = new HttpParams();
   getProjects(): Observable<GetProjects[]> {
+    // let projectParams!: ProjectParams
+    // let params  = this.httpParams;
+    // for(let i in projectParams.ProjectStatusToDisplay) {
+    //   params.append('ProjectStatusToDisplay', projectParams.ProjectStatusToDisplay[i]);
+    // }
+    // params.set('PageIndex' ,projectParams.PageIndex);
+    // params.set('PageSize',projectParams.PageSize);
+    // params.set('Sort',projectParams.Sort);
+    // params.set('Search' , projectParams.Search);
+
     return this.http.get<GetProjects[]>(`${this.projectUrl}`);
   }
+
 
   getProjectByID(Id: number): Observable<GetProject> {
 
@@ -68,7 +89,6 @@ export class ProjectService {
   createProject(files: File[], project: CreateProject) {
     const file = files[0];
     const formdata= new FormData();
-
 
     return this.http.post<number>(`${this.projectUrl}`, project).pipe(
       map(x => {

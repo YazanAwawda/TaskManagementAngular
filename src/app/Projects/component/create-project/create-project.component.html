@@ -1,13 +1,12 @@
-<form style="margin:100px ;" #projectForm [formGroup]="ProjectFormGroup" (ngSubmit)="checkForm()" class="container">
+<form  style="margin-left:550px ; width: 550px; margin-top: 111px;" #projectForm [formGroup]="ProjectFormGroup" (ngSubmit)="checkForm()" class="container">
   <div class="mb-3">
       <label for="projectName" class="form-label">Project name:</label>
-      <input formControlName="name" type="text" class="form-control" id="projectName" placeholder="The One App">
+      <input formControlName="name" type="text" class="form-control" id="projectName">
   </div>
 
   <div class="mb-3">
       <label for="projectDescription" class="form-label">Project description:</label>
-      <textarea formControlName="description" class="form-control" id="projectDescription" rows="4"
-          placeholder="One App to rule them all, One App to find them, One App to bring them all, and in the darkness bind them."></textarea>
+      <textarea formControlName="description" class="form-control" id="projectDescription" rows="4"></textarea>
   </div>
 
   <div class=row>
@@ -32,7 +31,7 @@
   <div class="d-flex gap-2 mt-2 pb-3 pb-sm-0 justify-content-center justify-content-sm-start">
       <button type="submit" class="btn btn-secondary">Create project</button>
       <button type="button" class="btn btn-danger" (click)="formCleanerManual()">Reset</button>
-      <button type="button" class="btn btn-primary" routerLink="/projects">Go back</button>
+      <button type="button" class="btn btn-primary" routerLink="/list-project">Go back</button>
   </div>
 
   <div id="projectSaved" class="mt-3 d-none">

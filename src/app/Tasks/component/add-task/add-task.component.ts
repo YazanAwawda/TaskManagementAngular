@@ -4,26 +4,23 @@ import  * as enum_ from  "../../../Enum/enum.model";
 import {CreateTasks} from "../../../Models/Tasks/task.model";
 import {TaskServices} from "../../../Services/TaskServices/task.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import * as Enum_ from "../../../Enum/enum.model";
 import {TaskPriority, TaskType} from "../../../Enum/enum.model";
-import {ProjectDetailsComponent} from "../../../Projects/component/project-details/project-details.component";
 import {ActivatedRoute} from "@angular/router";
-import {map} from "rxjs";
-import {formatNumber} from "@angular/common";
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements  OnInit{
-
   public enumValue = enumValues;
   public taskType = enum_.TaskType ;
   public selectedTaskType = enum_.TaskType.FeatureRemove ;
-  public create_Task ?: CreateTasks ;
 
   public taskPriority = enum_.TaskPriority ;
   public selectedTaskPriority = enum_.TaskPriority.Low ;
+
+  tasks !: CreateTasks ;
   TaskFormGroup !: FormGroup<any>  ;
   projectID !: number ;
 
@@ -35,7 +32,7 @@ export class AddTaskComponent implements  OnInit{
               ) {
   }
   ngOnInit(): void {
-// subscribe to the event here
+    // subscribe to the event here
     this.route.params.subscribe(x => {
       this.projectID = Number(x["id"])
     });
@@ -73,8 +70,8 @@ get TaskPriority_() {return this.TaskFormGroup?.get('taskPriority') as FormContr
     projectId :  this.projectID as number
     }
      this.taskService.addTask(creatTask_).subscribe(task => {
+       this.tasks = task ;
        console.log(task)
-      this.create_Task =  creatTask_ ;
     })
   }
 

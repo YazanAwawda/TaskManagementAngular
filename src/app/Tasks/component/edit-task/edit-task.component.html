@@ -1,1 +1,34 @@
-<p>edit-task works!</p>
+
+<form style="margin-left:550px ; width: 550px; margin-top: 111px;"
+      #taskForm [formGroup]="EditTasksFormGroup"   (ngSubmit)="onEditTask()">
+  <div class="mb-3">
+    <label for="taskName"   class="form-label">Task name:</label>
+    <input formControlName="name" type="text" class="form-control" id="taskName">
+  </div>
+
+  <div class="mb-3">
+    <label for="taskDescription" class="form-label">Task description:</label>
+    <textarea formControlName="description" class="form-control" id="taskDescription" rows="4"></textarea>
+  </div>
+
+  <div class=row>
+    <div class="mb-3 col">
+      <label for="projectEndDate" class="form-label">Task end date:</label>
+      <input formControlName="endDate" type="date" class="form-control" id="projectEndDate">
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label>
+      Task Type
+    </mat-label>
+    <mat-select formControlName="taskType">
+      <mat-option *ngFor="let e of enumValue(taskType) " [value]="e">{{e | TaskType  }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="d-flex gap-2 mt-2 pb-3 pb-sm-0 justify-content-center justify-content-sm-start">
+    <button type="submit" class="btn btn-secondary">Edit task</button>
+    <button type="button" class="btn btn-primary" routerLink="/All-Tasks">Go back</button>
+  </div>
+</form>

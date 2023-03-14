@@ -3,8 +3,16 @@ import * as EnumPipe     from './EnumPipe/enum.pipe';
 
 @NgModule({
   imports:        [],
-  declarations:   [EnumPipe.TaskTypePipe , EnumPipe.TaskPriorityPipe ],
-  exports:        [EnumPipe.TaskTypePipe , EnumPipe.TaskPriorityPipe ],
+
+  declarations:   [EnumPipe.TaskTypePipe ,
+                  EnumPipe.TaskPriorityPipe
+                , EnumPipe.TaskStatusPipe
+                , EnumPipe.ProjectStatusPipe ],
+
+  exports:        [EnumPipe.TaskTypePipe ,
+                  EnumPipe.TaskPriorityPipe ,
+                  EnumPipe.TaskStatusPipe ,
+                  EnumPipe.ProjectStatusPipe],
 })
 
 export class PipeModule {
