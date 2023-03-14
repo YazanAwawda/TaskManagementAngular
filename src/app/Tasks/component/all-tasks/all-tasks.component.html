@@ -1,0 +1,11 @@
+<div class="list-group" style="margin-top:80px;margin-left:350px;position: fixed;  ">
+<h1>All Tasks</h1>
+  <a [routerLink]="['/task-details', task.id]" style="margin-top: 5px;" class="list-group-item list-group-item-action" *ngFor="let task of tasks">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{task.name}}</h5>
+      <small class="text-muted">{{task.estimatedDueDate | date}}</small>
+    </div>
+    <p class="mb-1">{{task.description}}</p>
+    <small class="text-muted">{{task.durationProgress}}</small>
+  </a>
+</div>
